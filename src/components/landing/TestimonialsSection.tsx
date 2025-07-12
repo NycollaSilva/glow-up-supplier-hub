@@ -29,55 +29,55 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-black mb-6">
+    <section className="py-12 sm:py-16 lg:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 px-4">
             O QUE NOSSOS <span className="text-gradient">CLIENTES DIZEM</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Mais de 1.000 empreendedores já transformaram seus negócios com nossa planilha. Veja alguns resultados reais:
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="relative p-8 bg-card border border-border/50 rounded-2xl hover:border-primary/30 transition-all duration-300 group hover:transform hover:scale-105"
+              className="relative p-4 sm:p-6 lg:p-8 bg-card border border-border/50 rounded-2xl hover:border-primary/30 transition-all duration-300 group hover:transform hover:scale-105"
             >
               {/* Quote icon */}
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-primary/20 group-hover:text-primary/40 transition-colors duration-300" />
+              <Quote className="absolute top-4 right-4 sm:top-6 sm:right-6 w-6 h-6 sm:w-8 sm:h-8 text-primary/20 group-hover:text-primary/40 transition-colors duration-300" />
               
               {/* Rating stars */}
-              <div className="flex items-center gap-1 mb-6">
+              <div className="flex items-center gap-1 mb-4 sm:mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-primary fill-primary" />
+                  <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-primary fill-primary" />
                 ))}
               </div>
               
               {/* Testimonial text */}
-              <p className="text-foreground leading-relaxed mb-6 text-lg">
+              <p className="text-foreground leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">
                 "{testimonial.text}"
               </p>
               
               {/* Highlight */}
-              <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center bg-primary/10 text-primary px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
                 ✨ {testimonial.highlight}
               </div>
               
               {/* Author info */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0">
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div>
-                  <div className="font-semibold text-foreground">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.business}</div>
+                <div className="min-w-0">
+                  <div className="font-semibold text-foreground text-sm sm:text-base truncate">{testimonial.name}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground truncate">{testimonial.business}</div>
                 </div>
               </div>
             </div>
@@ -85,12 +85,12 @@ const TestimonialsSection = () => {
         </div>
         
         {/* Additional social proof */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-6 py-3">
-            <Star className="w-5 h-5 text-primary fill-primary" />
+        <div className="text-center mt-8 sm:mt-12 lg:mt-16 px-4">
+          <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base">
+            <Star className="w-4 h-4 sm:w-5 sm:h-5 text-primary fill-primary flex-shrink-0" />
             <span className="font-medium">4.9/5 estrelas</span>
-            <span className="text-muted-foreground">•</span>
-            <span className="text-muted-foreground">Baseado em 1.000+ avaliações</span>
+            <span className="text-muted-foreground hidden sm:inline">•</span>
+            <span className="text-muted-foreground hidden sm:inline">Baseado em 1.000+ avaliações</span>
           </div>
         </div>
       </div>
